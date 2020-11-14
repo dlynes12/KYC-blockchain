@@ -20,3 +20,18 @@ contract KYC is ERC721Full {
     // Only permanent data that you would need to use within the smart contract later should be stored on-chain
     
     mapping(uint => Client) public Clientdatabase;
+    
+    event NewClient(uint token_id, string report_uri);
+    event ChangeClientInfo(uint token_id, string report_uri);
+    
+    function registerKYC(address client, string memory name, string memory email, string memory report_uri) public returns(uint) {
+        token_ids.increment();
+        uint token_id = token_ids.current();
+
+        _mint(client, token_id);
+        emit NewClient(token_id, report_uri);
+
+        Clientdatabase[token_id] = Client(name, email, report_uri);
+
+        return token_id;
+    }

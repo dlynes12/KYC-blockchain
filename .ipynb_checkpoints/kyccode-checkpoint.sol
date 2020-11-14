@@ -9,3 +9,14 @@ contract KYC is ERC721Full {
 
     using Counters for Counters.Counter;
     Counters.Counter token_ids;
+ 
+     struct Client {
+        string name;
+        string email;
+        string report_uri;
+    }
+
+    // Stores token_id => Client
+    // Only permanent data that you would need to use within the smart contract later should be stored on-chain
+    
+    mapping(uint => Client) public Clientdatabase;

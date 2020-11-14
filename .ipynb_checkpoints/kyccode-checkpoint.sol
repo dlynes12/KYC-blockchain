@@ -35,3 +35,19 @@ contract KYC is ERC721Full {
 
         return token_id;
     }
+    
+    
+    function updateKYC(uint token_id, string memory report_uri) public returns(string memory) {
+        
+
+        // Permanently associates the report_uri with the token_id on-chain via Events for a lower gas-cost than storing directly in the contract's storage.
+        emit ChangeClientInfo(token_id, report_uri);
+        
+        return Clientdatabase[token_id].report_uri;
+        
+
+    }
+    
+     
+}
+

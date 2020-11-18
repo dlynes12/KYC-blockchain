@@ -10,6 +10,10 @@ class Form extends React.Component{
   				fname:'',
   				lname:'',
   				appAddress:'',
+  				email:'',
+  				phone:''
+
+
 };
 
 }
@@ -19,7 +23,25 @@ var nam=event.target.appname;
 var val=event.target.appAddress
 this.setState({[nam]: val});
 }
+// onSubmit=()=>{
+// 		fetch(,{
+// 		method:"post",
+// 		headers:{"Content-type":"applicant/json"},
+// 		body:JSON.stringify({
 
+// 			fname:this.state.fname,
+// 			lname:this.state.lname,
+// 			appAddress:this.state.appAddress,
+// 			email:this.state.email,
+// 			phone:this.state.phone;
+// 			bdate:this.state.bdate,
+// 			gender:this.state.gender
+
+
+// 		})
+// 	}
+// 	)
+// 	}
 	render(){
 		return(
 	<div id='cen'>
@@ -53,7 +75,8 @@ onChange={this.ChangeHandler}
 />
 <input
  type="tel"
-  name="phone" id="phone"
+  name="phone" 
+  id="phone"
    placeholder="Telephone Number" 
    required 
    onChange={this.ChangeHandler}
@@ -75,7 +98,7 @@ onChange={this.ChangeHandler}
     <div id='sub'> 
 <input
 types= 'text'
-name='appAddress'
+name='gender'
 onChange={this.ChangeHandler}
 />
 </div>
@@ -84,6 +107,8 @@ onChange={this.ChangeHandler}
                type="submit"
                 name="submit"
                  id="submit"
+
+                 onClick={this.submit}
                   />
 
 </fieldset>

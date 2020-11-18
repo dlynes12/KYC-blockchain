@@ -23,6 +23,8 @@ Utilizing Blockchain as a distributed ledger system has the potential to unlock 
 
 This ledger provides a historical record of all documents shared and compliance activities undertaken for each client. These records would prove useful when regulators request evidence that a bank has acted in accordance with the requirements of compliance banking. This aspect of blockchain technologies is also helpful in identifying entities attempting to create fraudulent histories. Within the provisions of data protection regulation, the data within the blockchain could be analysed to identify irregularities - this can directly target criminal activity.
 
+[Alt Text]
+
 Sources: 
 
 https://www2.deloitte.com/content/dam/Deloitte/ch/Documents/innovation/ch-en-innovation-deloitte-blockchain-app-in-banking.pdf

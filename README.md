@@ -1,5 +1,8 @@
-# KYC-blockchain
+# Know Your Customer (KYC) on Blockchain
 
+![KYC on Blockchain](Images/identity.jpg)
+
+*Source: https://www.devteam.space/blog/why-is-blockchain-a-good-solution-for-kyc-verification/*
 
 ## Introduction
 
@@ -11,23 +14,19 @@ KYC is a component of AML; they are the certain details that the business keeps 
 
 According to The LexisNexis® Risk Solutions 2019 True Cost of AML Compliance Study for the United States and Canada, the annual AML compliance costs for the United States and Canadian financial institutions totaled $31.5 billion USD
 
-
-Sources: 
-
-https://risk.lexisnexis.com/insights-resources/research/2019-true-cost-of-aml-compliance-study-for-united-states-and-canada
- 
-
 ## How Can This Help? 
 
 Utilizing Blockchain as a distributed ledger system has the potential to unlock the advantages of automated processes such as reducing compliance errors. A blockchain-based registry would not only remove the repetitive efforts of implementing KYC checks, but the ledger would also enabled encrypted updates to client accounts to be distributed in near real-time. 
 
 This ledger provides a historical record of all documents shared and compliance activities undertaken for each client. These records would prove useful when regulators request evidence that a bank has acted in accordance with the requirements of compliance banking. This aspect of blockchain technologies is also helpful in identifying entities attempting to create fraudulent histories. Within the provisions of data protection regulation, the data within the blockchain could be analysed to identify irregularities - this can directly target criminal activity.
 
-![Alt Text](https://github.com/dlynes12/KYC-blockchain/blob/main/Images/Blockchain_KYC.jpg)
+![Alt Text](Images/Blockchain_KYC.jpg)
 
-Sources: 
+*Source: https://www.devteam.space/blog/why-is-blockchain-a-good-solution-for-kyc-verification/*
 
-https://www2.deloitte.com/content/dam/Deloitte/ch/Documents/innovation/ch-en-innovation-deloitte-blockchain-app-in-banking.pdf
+
+
+
 
 ## Examples of Use 
 
@@ -51,3 +50,9 @@ https://www2.deloitte.com/content/dam/Deloitte/ch/Documents/innovation/ch-en-inn
 
 
 ## Sources
+
+1. https://risk.lexisnexis.com/insights-resources/research/2019-true-cost-of-aml-compliance-study-for-united-states-and-canada
+
+2. https://www2.deloitte.com/content/dam/Deloitte/ch/Documents/innovation/ch-en-innovation-deloitte-blockchain-app-in-banking.pdf
+ 
+

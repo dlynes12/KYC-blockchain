@@ -35,7 +35,7 @@ def convertDataToJSON(first_name, last_name, dob, email, nationality, occupation
             "nationality": nationality, 
             "occupation": occupation,
             "annual_income": annual_income,
-            "image": copy_driv_lic,
+            "image": image,
         },  
     }
     return json.dumps(data)

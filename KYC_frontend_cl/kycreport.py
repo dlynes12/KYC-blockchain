@@ -15,7 +15,7 @@ def createkycReport():
     occupation = input("Occupation: ")
     annual_income =input("Annual Income:  ")
     user_id = input("User ID: ")
-    copy_driv_lic = input("Driv Lic image_uri:  ")
+    image = input("Driv Lic image_uri:  ")
     
     json_data = convertDataToJSON(first_name, last_name, dob, email, nationality, occupation, annual_income, image)
     report_uri = pinJSONtoIPFS(json_data)

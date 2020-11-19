@@ -8,7 +8,7 @@ contract KYC {
         string email;
         string report_uri;
         bool used;
-        uint start_date;
+        //uint start_date;
         uint end_date;
     }
     
@@ -16,6 +16,8 @@ contract KYC {
     // Stores userID => Client
     // Only permanent data that you would need to use within the smart contract later should be stored on-chain
     mapping (address => Client) public Clientdatabase;
+    
+    uint start_date = now;
     
     
     event NewClient(address userID, string report_uri);
@@ -27,7 +29,7 @@ contract KYC {
         
         emit NewClient(userID, report_uri);
        
-       Clientdatabase[userID] = Client(userID, email, report_uri, true, now, now + 365 days);
+       Clientdatabase[userID] = Client(userID, email, report_uri, true, now + 365 days);
        
        return Clientdatabase[userID].used;
   }
@@ -55,9 +57,36 @@ contract KYC {
         return "Contract is Valid!";
         }
     } 
+   
+  // Create a list and loop through it to get expiring KYC reports
+    address [] public clientList;
+
+    event Logclientinfo(address client, uint clientend_date);
+
+    function appendclientinfo(address client, uint clientend_date) public {
+        clientList.push(client);
+        Clientdatabase[client].end_date = clientend_date;
+    }
     
-      
+    function getclientCount() public view returns(uint count) {
+        return clientList.length;
+    }
+    
+    function clientLoop() public {
+        
+        // WARN: This unbounded for loop is an anti-pattern
+        
+        for (uint i=0; i<clientList.length; i++) {
+            emit Logclientinfo(clientList[i], Clientdatabase[clientList[i]].end_date);
+            
+            
+        }
+    }
+
 }
+ 
+      
+
 
 
 

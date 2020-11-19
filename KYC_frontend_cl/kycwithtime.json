@@ -1,16 +1,108 @@
 [
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "client",
+				"type": "address"
+			},
+			{
+				"name": "clientend_date",
+				"type": "uint256"
+			}
+		],
+		"name": "appendclientinfo",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "clientLoop",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "userID",
+				"type": "address"
+			},
+			{
+				"name": "email",
+				"type": "string"
+			},
+			{
+				"name": "report_uri",
+				"type": "string"
+			}
+		],
+		"name": "registerKYC",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "userID",
+				"type": "address"
+			},
+			{
+				"name": "newreport_uri",
+				"type": "string"
+			}
+		],
+		"name": "updateKYC",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"anonymous": false,
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "address",
 				"name": "userID",
 				"type": "address"
 			},
 			{
 				"indexed": false,
-				"internalType": "string",
+				"name": "report_uri",
+				"type": "string"
+			}
+		],
+		"name": "NewClient",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "userID",
+				"type": "address"
+			},
+			{
+				"indexed": false,
 				"name": "report_uri",
 				"type": "string"
 			}
@@ -23,25 +115,41 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "address",
-				"name": "userID",
+				"name": "client",
 				"type": "address"
 			},
 			{
 				"indexed": false,
-				"internalType": "string",
-				"name": "report_uri",
-				"type": "string"
+				"name": "clientend_date",
+				"type": "uint256"
 			}
 		],
-		"name": "NewClient",
+		"name": "Logclientinfo",
 		"type": "event"
 	},
 	{
 		"constant": true,
 		"inputs": [
 			{
-				"internalType": "address",
+				"name": "userID",
+				"type": "address"
+			}
+		],
+		"name": "checkvalidity",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
 				"name": "",
 				"type": "address"
 			}
@@ -49,32 +157,22 @@
 		"name": "Clientdatabase",
 		"outputs": [
 			{
-				"internalType": "address",
 				"name": "userID",
 				"type": "address"
 			},
 			{
-				"internalType": "string",
 				"name": "email",
 				"type": "string"
 			},
 			{
-				"internalType": "string",
 				"name": "report_uri",
 				"type": "string"
 			},
 			{
-				"internalType": "bool",
 				"name": "used",
 				"type": "bool"
 			},
 			{
-				"internalType": "uint256",
-				"name": "start_date",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
 				"name": "end_date",
 				"type": "uint256"
 			}
@@ -87,17 +185,15 @@
 		"constant": true,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "userID",
-				"type": "address"
+				"name": "",
+				"type": "uint256"
 			}
 		],
-		"name": "checkvalidity",
+		"name": "clientList",
 		"outputs": [
 			{
-				"internalType": "string",
 				"name": "",
-				"type": "string"
+				"type": "address"
 			}
 		],
 		"payable": false,
@@ -105,60 +201,17 @@
 		"type": "function"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "userID",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "email",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "report_uri",
-				"type": "string"
-			}
-		],
-		"name": "registerKYC",
+		"constant": true,
+		"inputs": [],
+		"name": "getclientCount",
 		"outputs": [
 			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
+				"name": "count",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "userID",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "newreport_uri",
-				"type": "string"
-			}
-		],
-		"name": "updateKYC",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]

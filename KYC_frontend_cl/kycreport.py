@@ -9,13 +9,15 @@ kycwithtime = initContract()
 def createkycReport():
     first_name = input("First Name: ")
     last_name = input("Last Name: ")
-    gender = input("Gender: ")    
-    dob = input("Date of birth: ")
+    dob = input("Date of birth mm/dd/yyyy: ")
     email = input("Email: ")
     nationality = input("Nationality: ")
+    occupation = input("Occupation: ")
+    annual_income =input("Annual Income:  ")
     user_id = input("User ID: ")
+    copy_driv_lic = input("Driv Lic image_uri:  ")
     
-    json_data = convertDataToJSON(first_name, last_name, gender, dob, email, nationality)
+    json_data = convertDataToJSON(first_name, last_name, dob, email, nationality, occupation, annual_income, image)
     report_uri = pinJSONtoIPFS(json_data)
 
     return user_id, email, report_uri

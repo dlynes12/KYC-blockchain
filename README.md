@@ -31,7 +31,7 @@ This ledger will provide a historical record of all documents shared and complia
 
 ## Building the KYC System
 
-A KYC System is built using a command line interface that will upload and pin KYC reports to IPFS via Pinata, permanently storing them on-chain by using the registerKYC function in the KYC smart contract.
+A KYC System is built using a command line interface that will upload and pin KYC reports to IPFS via Pinata, permanently storing them on-chain by using the register KYC function in the KYC smart contract.
 
 1. A Smart contract is created `kyccontract.sol` with functions to register KYC information and update the data. This function also tracks the validity of the KYC details; where the information is valid up to `365 days` after which one needs to update the information.
 

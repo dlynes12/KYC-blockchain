@@ -6,7 +6,7 @@
 
 ## Introduction
 
-The purpose of this project is to explore the possibilities of the integration of blockchain into Know Your Customer (KYC)) a part of Anti-Money Laundering (AML). We have used Solidity to create a smart contract to input and update KYC information on the blockchain.
+The objective of this project is to explore the possibilities of integrating blockchain into Anti-Money Laundering practices. We have used Solidity to create a smart contract to input and update information on the blockchain for the purpose of streamlining the Know Your Customer (KYC) process.
 
 AML refers to the global laws, regulations, and procedures that are in place to prevent the act of producing income through illegal activities. The issue with the current AML procedures are that they are not able to keep pace with the evolving complexity and volume of financial transactions which becomes a problem for keeping a check on Laundering activities.
 

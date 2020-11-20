@@ -3,7 +3,7 @@ from kyc import convertDataToJSON, pinJSONtoIPFS, initContract, w3
 
 from pprint import pprint
 
-kycwithtime = initContract()
+kyccontract = initContract()
 
 
 def createkycReport():
@@ -24,25 +24,19 @@ def createkycReport():
 
 
 def kycreport(user_id, email, report_uri):
-    tx_hash = kycwithtime.functions.registerKYC(user_id, email, report_uri).transact(
+    tx_hash = kyccontract.functions.registerKYC(user_id, email, report_uri).transact(
         {"from": w3.eth.accounts[0]}
     )
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     return receipt
 
 def kycupdate(user_id, report_uri):
-    tx_hash = kycwithtime.functions.updateKYC(user_id, report_uri).transact(
+    tx_hash = kyccontract.functions.updateKYC(user_id, report_uri).transact(
         {"from": w3.eth.accounts[0]}
     )
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     return receipt
 
-
-# def getkycReports(user_id):
-#     kyc_filter = kycwithtime.events.NewClient.createFilter(
-#         fromBlock="0x0", argument_filters={"user_id": user_id}
-#     )
-#     return kyc_filter.get_all_entries()
 
 
 # sys.argv is the list of arguments passed from the command line
@@ -61,14 +55,6 @@ def main():
         pprint(receipt)
         print("Report IPFS Hash:", report_uri)
 
-#     if sys.argv[1] == "get":
-#         user_id = sys.argv[2]
-
-#         Client = kycwithtime.functions.Clientdatabase(user_id).call()
-#         reports = getkycReports(user_id)
-
-#         pprint(reports)
-#         print("KYC", Client[0], "has been registered.")
 
     if sys.argv[1] == "update":
         user_id, email, report_uri = createkycReport()

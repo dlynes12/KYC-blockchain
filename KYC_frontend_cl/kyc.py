@@ -17,7 +17,7 @@ headers = {
 
 
 def initContract():
-    with open(Path("kycwithtime.json")) as json_file:
+    with open(Path("kyccontract.json")) as json_file:
         abi = json.load(json_file)
 
     return w3.eth.contract(address=os.getenv("KYC_ADDRESS"), abi=abi)

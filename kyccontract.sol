@@ -5,7 +5,6 @@ contract KYC {
 
     struct Client {
         address userID;
-        string email;
         string report_uri;
         bool used;
         uint end_date;
@@ -32,14 +31,14 @@ contract KYC {
     event flagExpiring_kyc(address client, uint clientend_date); //
     
     
-    function registerKYC(address userID, string memory email, string memory report_uri) public returns(bool) { 
+    function registerKYC(address userID, string memory report_uri) public returns(bool) { 
         
         require(!Clientdatabase[userID].used, "Account already Exists"); //To prevent duplicate registration
         
         // Permanently associates the report_uri with the userID  on-chain via Events.
         emit NewClient(userID, report_uri);
        
-        Clientdatabase[userID] = Client(userID, email, report_uri, true, now + 365 days);
+        Clientdatabase[userID] = Client(userID, report_uri, true, now + 365 days);
         appendclientinfo(userID);
        
        return Clientdatabase[userID].used;

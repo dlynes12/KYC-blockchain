@@ -20,11 +20,11 @@ def createkycReport():
     json_data = convertDataToJSON(first_name, last_name, dob, email, nationality, occupation, annual_income, image)
     report_uri = pinJSONtoIPFS(json_data)
 
-    return user_id, email, report_uri
+    return user_id, report_uri
 
 
-def kycreport(user_id, email, report_uri):
-    tx_hash = kyccontract.functions.registerKYC(user_id, email, report_uri).transact(
+def kycreport(user_id, report_uri):
+    tx_hash = kyccontract.functions.registerKYC(user_id, report_uri).transact(
         {"from": w3.eth.accounts[0]}
     )
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
@@ -48,16 +48,16 @@ def kycupdate(user_id, report_uri):
 # python kycreport.py        get            1
 def main():
     if sys.argv[1] == "report":
-        user_id, email, report_uri = createkycReport()
+        user_id, report_uri = createkycReport()
 
-        receipt = kycreport(user_id, email, report_uri)
+        receipt = kycreport(user_id, report_uri)
 
         pprint(receipt)
         print("Report IPFS Hash:", report_uri)
 
 
     if sys.argv[1] == "update":
-        user_id, email, report_uri = createkycReport()
+        user_id,  report_uri = createkycReport()
 
         receipt = kycupdate(user_id, report_uri)
 

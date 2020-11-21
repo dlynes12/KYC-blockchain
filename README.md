@@ -33,9 +33,15 @@ This ledger will provide a historical record of all documents shared and complia
 
 A KYC System is built using a command line interface that will upload and pin KYC reports to IPFS via Pinata, permanently storing them on-chain by using the register KYC function in the KYC smart contract.
 
-1. A Smart contract is created `kyccontract.sol` with functions to register KYC information and update the data. This function also tracks the validity of the KYC details; where the information is valid up to `365 days` after which one needs to update the information.
+1. A Smart contract  `kyccontract.sol` is created with the `msg.sender` as contract administrator and the following functions:
 
-![Command Line Input](Images/commandline_input.PNG)
+* A `registerKYC` function is used to upload the KYC information into the `kyc` contract with the `userID` as the address of the customer and the `report_uri` that has all the details of the customer account. A check for duplicate records is also part of this function.
+
+* There is a provision to update the records through the `updateKYC` function where the existing address of the customer is linked to the new `report_uri` that has the updated information.
+
+* The KYC report for customers is valid upto `365 days`. A `checkvalidity` function tracks the validity of the customer report.
+
+* A `clientList` is created and appended every time a new KYC report is registered through the contract. This is done to keep a record of all the client addresses. A `for` loop is created within the `clientLoop` function to go over the list and pull out contracts that have expired and are about to expire in the next 30 days from the  client database. A log is generated for the administrator i.e. the `msg.sender` to follow-up with customers to update their KYC information.
 
 2. This contract is deployed in Remix IDE. 
 
@@ -71,7 +77,7 @@ A KYC System is built using a command line interface that will upload and pin KY
 
     * A `main` function we will is put the pieces together. In the `report` flow will create the kyc report then, store the receipt, and pretty print the results after. A similar `update` flow will create a report with the updated information and print the receipt.
     
-## Testing the KYC System
+## Launching the KYC System
 
 Test the kyc report system by navigating to the terminal, `cd`ing into the `KYC_frontend` folder workspace, and running the following commands:
 
@@ -96,9 +102,14 @@ After you have verified that you can fetch this metadata from your CLI, check ou
 
 - Metamask
 
-- React JS
-
 ## Limitations
+
+1. The `for` loop created in the function for keeping track of the list of clients is stored on the chain therefore requiring gas everytime the administrator needs to pull up a list of expiring reports. This can pose a problem once the list has many records. 
+
+2. The function for checking validity with timestamp "now" will work only when the  testrpc is updated each time a Solidity event is created on the chain. When there are no events, then the "now" timestamp will always be the same initial value when running on testrpc. The code in the contract should work on a live network.
+
+3. The date format for the end date for each report is stored as a timestamp on the blockchain. If given more time, we could write a  function to convert this into human readable form.
+
 
 ## Conclusion
 

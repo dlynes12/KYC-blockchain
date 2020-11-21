@@ -35,13 +35,13 @@ A KYC System is built using a command line interface that will upload and pin KY
 
 1. A Smart contract  `kyccontract.sol` is created with the `msg.sender` as contract administrator and the following functions:
 
-* A `registerKYC` function is used to upload the KYC information into the `kyc` contract with the `userID` as the address of the customer and the `report_uri` that has all the details of the customer account. A check for duplicate records is also part of this function.
+    * A `registerKYC` function is used to upload the KYC information into the `kyc` contract with the `userID` as the address of the customer and the `report_uri` that has all the details of the customer account. A check for duplicate records is also part of this function.
 
-* There is a provision to update the records through the `updateKYC` function where the existing address of the customer is linked to the new `report_uri` that has the updated information.
+    * There is a provision to update the records through the `updateKYC` function where the existing address of the customer is linked to the new `report_uri` that has the updated information.
 
-* The KYC report for customers is valid upto `365 days`. A `checkvalidity` function tracks the validity of the customer report.
+    * The KYC report for customers is valid upto `365 days`. A `checkvalidity` function tracks the validity of the customer report.
 
-* A `clientList` is created and appended every time a new KYC report is registered through the contract. This is done to keep a record of all the client addresses. A `for` loop is created within the `clientLoop` function to go over the list and pull out contracts that have expired and are about to expire in the next 30 days from the  client database. A log is generated for the administrator i.e. the `msg.sender` to follow-up with customers to update their KYC information.
+    * A `clientList` is created and appended every time a new KYC report is registered through the contract. This is done to keep a record of all the client addresses. A `for` loop is created within the `clientLoop` function to go over the list and pull out contracts that have expired and are about to expire in the next 30 days from the  client database. A log is generated for the administrator i.e. the `msg.sender` to follow-up with customers to update their KYC information.
 
 2. This contract is deployed in Remix IDE. 
 

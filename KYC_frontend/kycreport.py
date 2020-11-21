@@ -45,7 +45,7 @@ def kycupdate(user_id, report_uri):
 # For example:
 #        sys.argv[0]        sys.argv[1]    sys.argv[2]
 # python kycreport.py        report
-# python kycreport.py        get            1
+# python kycreport.py        update            1
 def main():
     if sys.argv[1] == "report":
         user_id, report_uri = createkycReport()

@@ -79,15 +79,34 @@ A KYC System is built using a command line interface that will upload and pin KY
     
 ## Launching the KYC System
 
-Test the kyc report system by navigating to the terminal, `cd`ing into the `KYC_frontend` folder workspace, and running the following commands:
+### Requirements
+* Create a pinata account and get your pinata API keys. [pinata website](https://pinata.cloud)
 
-`python kycreport.py report` 
+* Create an ethereum environment
 
-`python kycreport.py update` 
+1  Clone the repository
 
-These commands should ask a series of questions to create the customer report, then return an IPFS hash and a print a transaction receipt.
+2 Deploy the kyccontract.sol in Remix
 
-After you have verified that you can fetch this metadata from your CLI, check out your Pinata Pin Explorer to see what was uploaded to IPFS.
+3 Inside the KYC_frontend folder, create a .env file and copy the contents from the "sample" file
+
+4 fill in the details for your API keys and copy the contract address from remix
+
+5 Use the command line interface to create your records
+
+* Launch you ethereum environment
+* cd into the `KYC_frontend` directory
+*  Run the following comand :
+    * `python kycreport.py report` 
+     (to create a new report) 
+    * or `python kycreport.py update` ( to update a record) 
+* Complete the prompts to create your KYC report and register the client.
+*  This should return an IPFS hash of the reprt uri and a transaction receipt.
+
+6 Using the hash, you can view the KYC report at the uri.
+
+6 Verify that the client record exists in Remix.
+
 
 ## Technologies used
 

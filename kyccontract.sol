@@ -26,9 +26,9 @@ contract KYC {
     }
     
     // Events that will emit changes 
-    event NewClient(address userID, string report_uri); //
-    event ChangeClientInfo(address userID, string report_uri); //
-    event flagExpiring_kyc(address client, uint clientend_date); //
+    event NewClient(address userID, string report_uri); 
+    event ChangeClientInfo(address userID, string report_uri); 
+    event flagExpiring_kyc(address client, uint clientend_date); 
     
     
     function registerKYC(address userID, string memory report_uri) public returns(bool) { 
@@ -59,12 +59,12 @@ contract KYC {
      // check validity of a particular contract
     function checkvalidity(address userID) public view returns(string memory) {
         if (now > Clientdatabase[userID].end_date){
-        return "Contract has Expired!";
+        return "KYC has Expired!";
     }
     
         else {
             
-        return "Contract is Valid!";
+        return "KYC is Valid!";
         }
     } 
  

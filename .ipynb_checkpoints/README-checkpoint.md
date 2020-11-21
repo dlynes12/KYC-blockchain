@@ -18,7 +18,7 @@ According to The LexisNexis® Risk Solutions 2019 True Cost of AML Compliance St
 
 Blockchain technology allows for the creation of a distributed ledger that is then shared to all users on the network. Utilizing Blockchain as a distributed ledger system has the potential to unlock the advantages of automated processes such as reducing compliance errors. A blockchain-based registry would not only remove the repetitive efforts of implementing KYC checks, but the ledger would also enable encrypted updates to client accounts to be distributed in near real-time. 
 
-A KYC utility system based on blockchain technology will enable the financial and banking sectors to emancipate the process of identification verification. Presently,our data is collected and stored in a centralized system, such as a repository.With the introduction of blockchain solutions to handle the KYC process, data will be available on a decentralized network and can, therefore, be accessed by third parties directly after permission has been given.
+A KYC utility system based on blockchain technology will enable the financial and banking sectors to emancipate the process of identification verification. Currently, our data is collected and stored in a centralized system, such as a repository. With the introduction of blockchain solutions to handle the KYC process, data will be available on a decentralized network and can, therefore, be accessed by third parties directly after permission has been given.
 
 This blockchain-based KYC system will also offer better data security by ensuring that data access is only made after a confirmation or permission is received from the relevant authority. This will eliminate the chance of unauthorized access and subsequently give individuals greater control over their data.
 
@@ -31,9 +31,11 @@ This ledger will provide a historical record of all documents shared and complia
 
 ## Building the KYC System
 
-A KYC System is built using a command line interface that will upload and pin KYC reports to IPFS via Pinata, permanently storing them on-chain by using the registerKYC function in the KYC smart contract.
+A KYC System is built using a command line interface that will upload and pin KYC reports to IPFS via Pinata, permanently storing them on-chain by using the register KYC function in the KYC smart contract.
 
-1. A Smart contract is created `kyccontract.sol` with functions to register KYC information and update the data. Also, to track the validity of the KYC details; where the information is valid upto `365 days` after which one needs to update the information.
+1. A Smart contract is created `kyccontract.sol` with functions to register KYC information and update the data. This function also tracks the validity of the KYC details; where the information is valid up to `365 days` after which one needs to update the information.
+
+![Command Line Input](Images/commandline_input.PNG)
 
 2. This contract is deployed in Remix IDE. 
 
@@ -83,7 +85,6 @@ After you have verified that you can fetch this metadata from your CLI, check ou
 
 ## Technologies used
 
-(languages we used, the libraries and its versions)
 
 - Solidity
 

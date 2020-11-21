@@ -35,6 +35,8 @@ A KYC System is built using a command line interface that will upload and pin KY
 
 1. A Smart contract is created `kyccontract.sol` with functions to register KYC information and update the data. This function also tracks the validity of the KYC details; where the information is valid up to `365 days` after which one needs to update the information.
 
+![Command Line Input](Images/commandline_input.PNG)
+
 2. This contract is deployed in Remix IDE. 
 
 3. A new `KYC_frontend` directory is created where a `.env` file is stored with Pinata API Key and Secret API Key, address of the deployed smart contract and the WEB3 provider uri.
@@ -83,7 +85,6 @@ After you have verified that you can fetch this metadata from your CLI, check ou
 
 ## Technologies used
 
-(languages we used, the libraries and its versions)
 
 - Solidity
 

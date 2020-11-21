@@ -20,33 +20,6 @@
 	},
 	{
 		"constant": false,
-		"inputs": [
-			{
-				"name": "userID",
-				"type": "address"
-			},
-			{
-				"name": "email",
-				"type": "string"
-			},
-			{
-				"name": "report_uri",
-				"type": "string"
-			}
-		],
-		"name": "registerKYC",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
 		"inputs": [],
 		"name": "clientLoop",
 		"outputs": [],
@@ -95,6 +68,29 @@
 				"type": "address"
 			},
 			{
+				"name": "report_uri",
+				"type": "string"
+			}
+		],
+		"name": "registerKYC",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "userID",
+				"type": "address"
+			},
+			{
 				"name": "newreport_uri",
 				"type": "string"
 			}
@@ -123,10 +119,6 @@
 			{
 				"name": "userID",
 				"type": "address"
-			},
-			{
-				"name": "email",
-				"type": "string"
 			},
 			{
 				"name": "report_uri",

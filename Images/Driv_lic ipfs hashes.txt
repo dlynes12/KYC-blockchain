@@ -1,6 +1,7 @@
 Davesh
 (DL) ipfs://bafybeibg7bjuudtc3lcdgj5cf2dthslckpaf5vm4xhsgbbm52kv7cpswgi
 (report uri) ipfs://bafkreiaiv47tixjux3m2ckeobla7er2tpj3xhz2t4bgepi747darqgpanu
+hash ipfs://bafkreid2qienu26m6ffvejfh2d3kuvz6oqmotystau4p7q6gad4aw275jy 
 
 
 Jack
@@ -18,6 +19,7 @@ ipfs://bafybeieotokgggp3vqoeyw4tm4wlkhxlp2dzf5kuropug6pyyj3ogmssja
 Justin Bieber
 ipfs://bafybeiaiybv7ln5sfw3phgsmnqjvajwq3jrsdtb443gpihwuanaghlhwam
 (report uri) ipfs://bafkreiex4lameun2jneomcuk5kv3as552zza3r5no2v6432ezy526p7m2i
+hash 
 
 Thor
 ipfs://bafybeidvqpb2bxyjxwf4dwrmn3bri4mtgusygrtlffx3nek42wdkdirw34

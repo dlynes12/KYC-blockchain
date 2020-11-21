@@ -95,15 +95,28 @@ A KYC System is built using a command line interface that will upload and pin KY
 5 Use the command line interface to create your records
 
 * Launch you ethereum environment
+
+![](Images/ethereum_environment.PNG)
+
 * cd into the `KYC_frontend` directory
+
+
+
 *  Run the following comand :
     * `python kycreport.py report` 
      (to create a new report) 
     * or `python kycreport.py update` ( to update a record) 
+
+![](Images/initial_command.PNG)
+
 * Complete the prompts to create your KYC report and register the client.
 *  This should return an IPFS hash of the reprt uri and a transaction receipt.
 
+![hash](Images/command_line_input.PNG)
+
 6 Using the hash, you can view the KYC report at the uri.
+
+![](Images/kyc_report.PNG)
 
 6 Verify that the client record exists in Remix.
 
@@ -120,6 +133,8 @@ A KYC System is built using a command line interface that will upload and pin KY
 - Ganache
 
 - Metamask
+
+- API
 
 ## Limitations
 

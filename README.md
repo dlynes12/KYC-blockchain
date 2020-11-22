@@ -121,6 +121,8 @@ A KYC System is built using a command line interface that will upload and pin KY
 6 Verify that the client record exists in Remix.
 
 
+![](Images/remix_client_record.PNG)
+
 ## Technologies used
 
 

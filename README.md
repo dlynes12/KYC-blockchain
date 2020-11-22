@@ -94,7 +94,7 @@ A KYC System is built using a command line interface that will upload and pin KY
 
 5 Use the command line interface to create your records, using the following steps:
 
-* Launch you ethereum environment
+* Launch your ethereum environment
 
 ![](Images/ethereum_environment.PNG)
 
@@ -158,5 +158,9 @@ In the future, blockchain-based KYC utilities will help bring cost savings to an
 2. https://www2.deloitte.com/content/dam/Deloitte/ch/Documents/innovation/ch-en-innovation-deloitte-blockchain-app-in-banking.pdf
 
 
- 
-
+ ### Contributors
+https://github.com/Manjari-fintech
+ https://github.com/lizie29u
+https://github.com/JessicaDeCunha
+Abuubakry
+https://github.com/dlynes12

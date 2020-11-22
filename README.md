@@ -92,7 +92,7 @@ A KYC System is built using a command line interface that will upload and pin KY
 
 4 fill in the details for your API keys and copy the contract address from remix
 
-5 Use the command line interface to create your records
+5 Use the command line interface to create your records, using the following steps:
 
 * Launch you ethereum environment
 

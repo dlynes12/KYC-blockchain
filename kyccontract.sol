@@ -59,12 +59,12 @@ contract KYC {
      // check validity of a particular contract
     function checkvalidity(address userID) public view returns(string memory) {
         if (now > Clientdatabase[userID].end_date){
-        return "KYC has Expired!";
+        return "KYC report has Expired!";
     }
     
         else {
             
-        return "KYC is Valid!";
+        return "KYC report is Valid!";
         }
     } 
  

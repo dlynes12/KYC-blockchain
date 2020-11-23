@@ -81,8 +81,6 @@ A KYC System is built using a command line interface that will upload and pin KY
     
 ## Launching the KYC System
 
-### Requirements
-
 1. Create a pinata account and get your pinata API keys [pinata website](https://pinata.cloud).
 ​
 2. Create an ethereum environment using Anaconda prompt.
@@ -95,18 +93,17 @@ A KYC System is built using a command line interface that will upload and pin KY
 
 6. Use the command line interface to create your records, using the following steps:
 ​
-* Launch your ethereum environment
-​
-![Ethereum Environment](Images/ethereum_environment.PNG)
+* Launch your ethereum environment​
+
+  ![Ethereum Environment](Images/ethereum_environment.PNG)
 ​
 * cd into the `KYC_frontend` directory
 ​​
 *  Run the following commands:
 
-    * `python kycreport.py report` (to create a new report) 
+* `python kycreport.py report` (to create a new report) 
      
-    * `python kycreport.py update` (to update a record) 
-​
+* `python kycreport.py update` (to update a record) 
 ![Commands in CLI](Images/initial_command.PNG)
 ​
 * Complete the prompts to create your KYC report and register the client.
@@ -140,11 +137,9 @@ A KYC System is built using a command line interface that will upload and pin KY
 
 1. The `clientLoop` function is stored on the chain and therefore uses gas everytime the administrator needs to pull up a list of expiring reports. This will prove to be very costly as the database increases. Depending on the expected number of users, it may be more gas efficient to use a mapping to manage this function. However, if the database is not expected to be large, then the loop would still make better sense than the mapping as mapping will require more computational power.
 
-
-2. The function for checking validity with timestamp "now" will work only when the  testrpc is updated each time a Solidity event is created on the chain. When there are no events, then the "now" timestamp will always be the same initial value when running on testrpc. The code in the contract should work on a live network.
+2. The `checkvalidity` function does not work well on the test environment. Unlike main net, where there is constant activity and transactions occuring in real time, on the test net time is static. It only records time when a transaction is written to the chain. This creates a challenge when we try to use a function that requires us to calculate elapsed time. The code in the contract should work on a live network.
 
 3. The date format for the end date for each report is stored as a timestamp on the blockchain. If given more time, we could write a  function to convert this into human readable form.
-
 
 ## Conclusion
 

@@ -95,7 +95,7 @@ A KYC System is built using a command line interface that will upload and pin KY
 ​
 * Launch your ethereum environment​
 
-  ![Ethereum Environment](Images/ethereum_environment.PNG)
+![Ethereum Environment](Images/ethereum_environment.PNG)
 ​
 * cd into the `KYC_frontend` directory
 ​​
@@ -104,18 +104,22 @@ A KYC System is built using a command line interface that will upload and pin KY
 * `python kycreport.py report` (to create a new report) 
      
 * `python kycreport.py update` (to update a record) 
+
 ![Commands in CLI](Images/initial_command.PNG)
 ​
 * Complete the prompts to create your KYC report and register the client.
 *  This should return an IPFS hash of the reprt uri and a transaction receipt.
+
 ​
 ![hash](Images/command_line_input.PNG)
 ​
 * Using the hash, you can view the KYC report uploaded to IPFS.
+
 ​
 ![Report uri](Images/kyc_report.PNG)
 ​
 * Verify that the client record exists in Remix.
+
 ​
 ![Remix record](Images/remix_client_record.PNG)
 

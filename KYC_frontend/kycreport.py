@@ -43,9 +43,9 @@ def kycupdate(user_id, report_uri):
 # sys.argv[0] is always the name of the script
 # sys.argv[1] is the first argument, and so on
 # For example:
-#        sys.argv[0]        sys.argv[1]    sys.argv[2]
+#        sys.argv[0]        sys.argv[1]    
 # python kycreport.py        report
-# python kycreport.py        update            1
+# python kycreport.py        update            
 def main():
     if sys.argv[1] == "report":
         user_id, report_uri = createkycReport()

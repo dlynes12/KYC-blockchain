@@ -25,14 +25,14 @@ def createkycReport():
 
 def kycreport(user_id, report_uri):
     tx_hash = kyccontract.functions.registerKYC(user_id, report_uri).transact(
-        {"from": w3.eth.accounts[1]}
+        {"from": user_id}
     )
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     return receipt
 
 def kycupdate(user_id, report_uri):
     tx_hash = kyccontract.functions.updateKYC(user_id, report_uri).transact(
-        {"from": w3.eth.accounts[1]}
+        {"from": user_id}
     )
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     return receipt
